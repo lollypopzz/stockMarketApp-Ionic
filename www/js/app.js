@@ -1,4 +1,10 @@
-angular.module('stockMarketApp', ['ionic', 'stockMarketApp.controllers'])
+angular.module('stockMarketApp', [
+  'ionic',
+  'stockMarketApp.controllers',
+  'stockMarketApp.services',
+  'stockMarketApp.filters',
+  'stockMarketApp.directives'
+])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
