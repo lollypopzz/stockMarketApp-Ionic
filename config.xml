@@ -2,10 +2,10 @@
 <widget id="com.ionicframework.stockmarketapp786276" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>stockMarketApp</name>
   <description>
-        An Ionic Framework and Cordova project.
+        A Stock Market App dev by Ionic.
     </description>
-  <author email="you@example.com" href="http://example.com/">
-      Your Name Here
+  <author email="info@noonnieenunn.com" href="http://noonnieenunn.com/">
+      Noon Niee Nunn
     </author>
   <content src="index.html"/>
   <access origin="*"/>
