@@ -61,5 +61,9 @@ angular.module('stockMarketApp.controllers', [])
 
 }])
 
-.controller('StockCtrl', function($scope, $stateParams) {
-});
+.controller('StockCtrl', ['$scope', '$stateParams',
+  function($scope, $stateParams) {
+
+    $scope.ticker = $stateParams.stockTicker;
+
+}]);
