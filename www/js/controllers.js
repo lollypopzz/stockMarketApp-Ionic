@@ -61,22 +61,23 @@ angular.module('stockMarketApp.controllers', [])
 
 }])
 
-.controller('StockCtrl', ['$scope', '$stateParams', '$http', 'stockDataService',
-  function($scope, $stateParams, $http, stockDataService) {
-
-    // //http://finance.yahoo.com/webservice/v1/symbols/YHOO/quote?format=json&view=detail
-    // $http.get("http://finance.yahoo.com/webservice/v1/symbols/YHOO/quote?format=json&view=detail")
-    //   .then(function(jsonData) {
-    //     console.log(jsonData.data.list.resources[0].resource.fields);
-    //   }
-    // );
+.controller('StockCtrl', ['$scope', '$stateParams', 'stockDataService',
+  function($scope, $stateParams, stockDataService) {
 
     $scope.ticker = $stateParams.stockTicker;
 
-    var promise = stockDataService.getPriceData($scope.ticker);
-
-    promise.then(function(data) {
-      console.log(data);
+    $scope.$on("$ionicView.afterEnter", function() {
+      getPriceData();
     });
+
+    function getPriceData() {
+      var promise = stockDataService.getPriceData($scope.ticker);
+
+      promise.then(function(data) {
+        console.log(data);
+      });
+    }
+
+
 
 }]);
