@@ -73,4 +73,10 @@ angular.module('stockMarketApp.controllers', [])
 
     $scope.ticker = $stateParams.stockTicker;
 
+    var promise = stockDataService.getPriceData($scope.ticker);
+
+    promise.then(function(data) {
+      console.log(data);
+    });
+
 }]);
