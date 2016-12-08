@@ -68,10 +68,19 @@ angular.module('stockMarketApp.controllers', [])
 
     $scope.$on("$ionicView.afterEnter", function() {
       getPriceData();
+      getDetailsData();
     });
 
     function getPriceData() {
       var promise = stockDataService.getPriceData($scope.ticker);
+
+      promise.then(function(data) {
+        console.log(data);
+      });
+    }
+
+    function getDetailsData() {
+      var promise = stockDataService.getDetailsData($scope.ticker);
 
       promise.then(function(data) {
         console.log(data);
